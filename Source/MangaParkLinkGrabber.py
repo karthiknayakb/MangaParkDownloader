@@ -11,7 +11,13 @@ def getPageContent(url):
 ##Returns the string of mangaName from the url
 def getMangaName(url):
     urlPart = url.split("/")
-    mangaName = urlPart[4]+'/'+urlPart[5]+'/'+urlPart[6]
+    print (urlPart)
+    listLength = len(urlPart)
+    if listLength >= 9:
+        mangaName = urlPart[4]+'/'+urlPart[5]+'/'+urlPart[6]+'/'+urlPart[7]+'/'
+    else:
+        mangaName = urlPart[4]+'/'+urlPart[5]+'/'+urlPart[6]+'/'
+    print ("length= ",listLength," mangaName= ",mangaName)
     return mangaName
 
 ##returns all the links chapter pages
@@ -56,7 +62,7 @@ def initCrawl(url):
     pages = natural_sort(getPageList(pageContent,mangaName))
     return pages
 
-url1 = "http://mangapark.me/manga/one-piece/s3/c840/1"
+url1 = "http://mangapark.me/manga/hotman/s2/v14/c155/1"
 pages1 = initCrawl(url1)
 print ("-------------Links------------")
 for link in pages1:
