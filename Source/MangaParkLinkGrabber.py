@@ -67,7 +67,7 @@ pages1 = initCrawl(url1)
 print ("-------------Links------------")
 for link in pages1:
     print (link)
-print ("-------------Images------------")
+print ("-------------Images------------") ##Purpose is to get links and have some important functions (Need to seperate)
 urls = getChapterImgUrls(pages1)
 for url in urls:
     print (url)
